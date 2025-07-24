@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Love Animation</title>
+  <style>
+    body {
+      margin: 0;
+      background: #ffdde1;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .heart {
+      width: 100px;
+      height: 90px;
+      position: relative;
+      animation: pulse 1s infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 90px;
+      background: red;
+      border-radius: 50px 50px 0 0;
+      top: 0;
+      left: 0;
+    }
+
+    .heart::after {
+      left: 50px;
+    }
+
+    .heart::before {
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+
+    .heart::after {
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    h1 {
+      color: #d40000;
+      margin-top: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% {opacity: 0;}
+      100% {opacity: 1;}
+    }
+  </style>
+</head>
+<body>
+  <div class="heart"></div>
+  <h1>Love you ❤️</h1>
+</body>
+</html>
